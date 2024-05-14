@@ -18,7 +18,7 @@ io.on("connection", (socket) => {
   console.log(socket.id);
   socket.on("sendMessage", (data) => {
     data = data + " from the server"
-    socket.emit("receiveMessage", data);
+    io.emit("receiveMessage", data);
   });
 });
 
